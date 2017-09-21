@@ -10,7 +10,13 @@ function bropkg::setup() {
 }
 
 function bropkg::install_package() {
+    pkg=$1
+    ver=$2
     bropkg::setup
-    bro-pkg list installed | grep -qw $1 && return 
-    bro-pkg install $1
+    if bro-pkg list installed | grep -w $pkg | grep -qw $ver ; then
+        echo "bro package $pkg version $ver already installed"
+        return;
+    fi
+    echo "Installing bro package $pkg version $ver"
+    bro-pkg install $pkg --version $ver  || barf
 }

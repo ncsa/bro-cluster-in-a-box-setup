@@ -14,4 +14,4 @@ source /etc/profile.d/bro.sh
 pfring::setup_bro_plugin
 
 install_package net-tools # for ifconfig
-bropkg::install_package ncsa/bro-interface-setup
+bropkg::install_package ncsa/bro-interface-setup fix-multi
