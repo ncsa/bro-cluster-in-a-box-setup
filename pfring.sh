@@ -1,8 +1,9 @@
 source epel.sh
 source bropkg.sh
-function pfring::setup() {
+
+function pfring::setup_userland() {
     if [ -e /usr/local/include/linux/pf_ring.h ]; then
-        echo "PFRING already installed"
+        echo "PFRING userland already installed"
         return
     fi
     if [ ! -e /etc/yum.repos.d/ntop.repo ] ; then 
@@ -11,7 +12,17 @@ function pfring::setup() {
 
    epel::setup
    yum update || barf
-   yum -q -y install pfring pfring-dkms || barf
+   yum -q -y install pfring || barf
+}
+
+function pfring::setup_kernel() {
+   install_package kernel-devel
+   yum -q -y install pfring-dkms || barf
+}
+
+function pfring::setup() {
+    pfring::setup_userland
+    pfring::setup_kernel
 }
 
 function pfring::setup_bro_plugin() {
