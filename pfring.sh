@@ -16,5 +16,5 @@ function pfring::setup() {
 
 function pfring::setup_bro_plugin() {
     bropkg::setup
-    bro-pkg install https://github.com/ncsa/bro-pf_ring || barf
+    bro-pkg install https://github.com/ncsa/bro-pf_ring --version fix-load-balancing || barf
 }
