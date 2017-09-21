@@ -4,6 +4,6 @@ function epel::setup() {
         echo "EPEL already installed"
         return
     fi
-    yum -qy install epel-release || barf
+    yum -q -y install epel-release || barf
 
 }

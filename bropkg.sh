@@ -1,6 +1,6 @@
 function bropkg::setup() {
     if [ ! -e /usr/bin/pip ]; then
-        yum -qy install python2-pip || barf
+        yum -q -y install python2-pip || barf
     fi
     if [ -e /usr/bin/bro-pkg ]; then
         return

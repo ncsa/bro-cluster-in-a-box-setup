@@ -8,7 +8,7 @@ function die {
 }
 
 function install_prereqs {
-    yum install -y git cmake cmake28 make gcc gcc-c++ flex bison libpcap-devel openssl-devel python-devel swig gperftools-devel GeoIP-devel
+    yum install -q -y git cmake cmake28 make gcc gcc-c++ flex bison libpcap-devel openssl-devel python-devel swig gperftools-devel GeoIP-devel
 }
 
 function checkout_version {

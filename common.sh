@@ -4,5 +4,5 @@ function barf() {
 }
 
 install_package() {
-    rpm -q $1 > /dev/null || yum -qy install $1 || barf
+    rpm -q $1 > /dev/null || yum -q -y install $1 || barf
 }

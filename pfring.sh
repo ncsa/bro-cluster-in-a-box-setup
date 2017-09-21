@@ -11,7 +11,7 @@ function pfring::setup() {
 
    epel::setup
    yum update || barf
-   yum -qy install pfring pfring-dkms || barf
+   yum -q -y install pfring pfring-dkms || barf
 }
 
 function pfring::setup_bro_plugin() {
