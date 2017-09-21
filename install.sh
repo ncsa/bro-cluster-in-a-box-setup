@@ -1,5 +1,7 @@
 #!/usr/bin/env bash
 
+ROOT=$(pwd)
+
 source common.sh
 source pfring.sh
 source caf.sh
@@ -9,7 +11,7 @@ pfring::setup
 caf::setup 0.14.4
 bro::setup v2.5.1 /srv/bro
 
-source /etc/profile.d/bro.sh
+source /etc/profile.d/bro.sh || barf
 
 pfring::setup_bro_plugin
 

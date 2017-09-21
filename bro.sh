@@ -77,7 +77,7 @@ function bro::setup {
     install_bro $VERSION $PREFIX
 
     if [ ! -e /etc/profile.d/bro ]; then
-        cp dist/bro_profile.sh /etc/profile.d/bro.sh
+        cp ${ROOT}/dist/bro_profile.sh /etc/profile.d/bro.sh
     fi
 }
 
