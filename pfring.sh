@@ -1,4 +1,5 @@
 source epel.sh
+source bropkg.sh
 function pfring::setup() {
     if [ -e /usr/local/include/linux/pf_ring.h ]; then
         echo "PFRING already installed"
@@ -11,4 +12,9 @@ function pfring::setup() {
    epel::setup
    yum update || barf
    yum -qy install pfring pfring-dkms || barf
+}
+
+function pfring::setup_bro_plugin() {
+    bropkg::setup
+    bro-pkg install https://github.com/ncsa/bro-pf_ring || barf
 }
