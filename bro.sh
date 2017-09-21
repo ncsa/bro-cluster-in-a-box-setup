@@ -80,3 +80,4 @@ function bro::setup {
         cp dist/bro_profile.sh /etc/profile.d/bro.sh
     fi
 }
+
