@@ -5,5 +5,6 @@ function bropkg::setup() {
     if [ -e /usr/local/bin/bro-pkg ]; then
         return
     fi
-    pip install -y bro-pkg || barf
+    pip install bro-pkg || barf
+    bro-pkg autoconfig
 }

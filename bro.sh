@@ -75,4 +75,8 @@ function bro::setup {
     PREFIX=$2
     echo "Installing bro $VERSION in $PREFIX"
     install_bro $VERSION $PREFIX
+
+    if [ ! -e /etc/profile.d/bro ]; then
+        cp dist/bro_profile.sh /etc/profile.d/bro.sh
+    fi
 }
