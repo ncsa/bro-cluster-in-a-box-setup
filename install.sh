@@ -1,7 +1,5 @@
 #!/usr/bin/env bash
 
-set
-
 source common.sh
 source pfring.sh
 source caf.sh
