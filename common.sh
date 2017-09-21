@@ -4,5 +4,9 @@ function barf() {
 }
 
 install_package() {
-    rpm -q $1 > /dev/null || yum -q -y install $1 || barf
+    if rpm -q $1 > /dev/null ; then
+        return
+    fi
+    echo "Installing package $1"
+    yum -q -y install $1 || barf
 }
