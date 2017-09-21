@@ -1,4 +1,4 @@
-export PATH=$PATH:/usr/local/bro/bin
+export PATH=$PATH:/srv/bro/bin
 
 # Function
 bro-grep() { grep -E "(^#)|$1" $2; }
