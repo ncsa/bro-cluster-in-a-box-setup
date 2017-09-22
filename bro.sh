@@ -83,5 +83,8 @@ function bro::setup {
         cp ${ROOT}/dist/bro.service /etc/systemd/system/bro.service
         systemctl enable bro
     fi
+    if [ ! -e /etc/cron.d/bro ]; then
+        cp ${ROOT}/dist/bro.cron /etc/cron.d/bro
+    fi
 }
 
