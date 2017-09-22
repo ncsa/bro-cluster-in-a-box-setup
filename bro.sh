@@ -79,5 +79,9 @@ function bro::setup {
     if [ ! -e /etc/profile.d/bro ]; then
         cp ${ROOT}/dist/bro_profile.sh /etc/profile.d/bro.sh
     fi
+    if [ ! -e /etc/systemd/system/bro.service ]; then
+        cp ${ROOT}/dist/bro.service /etc/systemd/system/bro.service
+        systemctl enable bro
+    fi
 }
 
