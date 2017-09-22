@@ -18,4 +18,4 @@ pfring::setup_bro_plugin
 install_package net-tools # for ifconfig
 install_package gdb # for crash reports
 
-bropkg::install_package ncsa/bro-interface-setup fix-multi
+bropkg::install_package ncsa/bro-interface-setup master
