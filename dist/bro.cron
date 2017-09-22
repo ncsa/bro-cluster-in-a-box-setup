@@ -1,0 +1,6 @@
+#MAILTO="??"
+#bro cron tasks
+*/5  * * * * root timeout 10m /srv/bro/bin/broctl cron
+
+#remove old crash files
+@daily      root find /srv/bro/spool/tmp/ -name 'post-term*'  -mtime +7 | xargs rm -rf
