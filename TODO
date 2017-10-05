@@ -20,3 +20,7 @@ ethtool -C $IF adaptive-rx on rx-usecs 100
 
 
 set to UTC and setup NTP.
+
+
+interfacesetup.enabled = 1
+pfringclusterid=11 in broctl.cfg
