@@ -8,10 +8,6 @@ broctl generator, prompt for MailTo etc.
 
 from septun:
 
-modprobe ixgbe MQ=0,0,0,0 RSS=1,1,1,1 VMDQ=0,0,0,0 \
-InterruptThrottleRate=12500,12500,12500,12500 \
-FCoE=0,0,0,0 LRO=0,0,0,0 vxlan_rx=0,0,0,0
-
 for each interface:
 ethtool -L $IF combined 1
 ethtool -G $IF rx 512

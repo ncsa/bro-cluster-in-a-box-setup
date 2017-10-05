@@ -6,6 +6,7 @@ source common.sh
 source pfring.sh
 source caf.sh
 source bro.sh
+source tuning.sh
 
 pfring::setup
 caf::setup 0.14.4
@@ -19,3 +20,6 @@ install_package net-tools # for ifconfig
 install_package gdb # for crash reports
 
 bropkg::install_package ncsa/bro-interface-setup master
+bropkg::install_package ncsa/bro-doctor 1.17.0
+
+tuning::setup
