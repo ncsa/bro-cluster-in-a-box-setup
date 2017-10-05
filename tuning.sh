@@ -5,7 +5,7 @@ function tuning::setup {
 
     if ! grep -q nohz_full /etc/default/grub; then
         echo "Appending nohz_full=1-19,21-39 isolcpus=1-15,17-31 to kernel commandline"
-        perl -pi.back -e 's/quiet"/quiet nohz_full=1-19,21-39 isolcpus=1-15,17-31"/' /etc/default/grub
+        perl -pi.back -e 's/quiet"/quiet nohz_full=1-19,21-39 isolcpus=1-19,21-39"/' /etc/default/grub
         echo "Rebuilding initrd"
         /sbin/grub2-mkconfig -o /boot/grub2/grub.cfg
     fi
