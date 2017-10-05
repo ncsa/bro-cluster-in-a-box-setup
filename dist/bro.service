@@ -6,6 +6,7 @@ After=network.target
 ExecStartPre=-/srv/bro/bin/broctl cleanup
 ExecStartPre=/srv/bro/bin/broctl check
 ExecStartPre=/srv/bro/bin/broctl install
+ExecStartPre=/bin/sleep 30
 ExecStart=/srv/bro/bin/broctl start
 ExecStop=/srv/bro/bin/broctl stop
 RestartSec=10s
