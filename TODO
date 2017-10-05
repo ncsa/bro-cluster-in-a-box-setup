@@ -1,5 +1,4 @@
 pfring kernel module configuration
-cpu stuff from septun guide
 
 node.cfg generator for number of nics and cpus
 broctl generator, prompt for MailTo etc.
