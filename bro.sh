@@ -94,5 +94,13 @@ function bro::setup {
     if ! grep -q interfacesetup.enabled /srv/bro/etc/broctl.cfg; then
         cp ${ROOT}/dist/broctl.cfg /srv/bro/etc/broctl.cfg
     fi
+
+    if [ ! -e /srv/bro/site ] ; then
+        ln -s /srv/bro/share/bro/site /srv/bro/site ;
+    fi
+
+    if ! grep -q '@load tuning/json-logs.bro' /srv/bro/site/local.bro ; then
+        echo @load tuning/json-logs.bro >> /srv/bro/site/local.bro
+    fi
 }
 
