@@ -18,5 +18,6 @@ function bropkg::install_package() {
         return;
     fi
     echo "Installing bro package $pkg version $ver"
+    bro-pkg refresh
     bro-pkg install $pkg --version $ver  || barf
 }
