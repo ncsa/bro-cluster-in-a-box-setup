@@ -23,6 +23,10 @@ function pfring::setup_kernel() {
 function pfring::setup() {
     pfring::setup_userland
     pfring::setup_kernel
+
+    if [ ! -e /etc/modprobe.d/pfring_options.conf ]; then
+        cp ${ROOT}/dist/pfring_options.conf /etc/modprobe.d/
+    fi
 }
 
 function pfring::setup_bro_plugin() {
