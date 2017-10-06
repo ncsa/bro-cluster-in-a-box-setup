@@ -18,9 +18,10 @@ pfring::setup_bro_plugin
 
 install_package net-tools # for ifconfig
 install_package gdb # for crash reports
+install_package jq # for json logs
 
 bropkg::install_package ncsa/bro-interface-setup master
-bropkg::install_package ncsa/bro-doctor 1.17.0
+bropkg::install_package ncsa/bro-doctor 1.17.1
 
 tuning::setup
 
