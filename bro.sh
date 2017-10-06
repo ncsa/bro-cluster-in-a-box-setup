@@ -86,5 +86,13 @@ function bro::setup {
     if [ ! -e /etc/cron.d/bro ]; then
         cp ${ROOT}/dist/bro.cron /etc/cron.d/bro
     fi
+
+    if ! grep -q pf_ring /srv/bro/etc/node.cfg ; then
+        cp ${ROOT}/dist/node.cfg /srv/bro/etc/node.cfg
+    fi
+
+    if ! grep -q interfacesetup.enabled /srv/bro/etc/broctl.cfg; then
+        cp ${ROOT}/dist/broctl.cfg /srv/bro/etc/broctl.cfg
+    fi
 }
 
