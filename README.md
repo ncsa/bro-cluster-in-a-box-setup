@@ -10,4 +10,4 @@ change MailTo in /srv/bro/etc/broctl.cfg
 
 Add local networks to /srv/bro/etc/networks.cfg
 
-reboot, or run `broctl deploy`
+reboot if first run, or run `broctl deploy` otherwise
