@@ -2,8 +2,11 @@ function bropkg::setup() {
     if [ ! -e /usr/bin/pip ]; then
         yum -q -y install python2-pip || barf
     fi
-    if [ -e /usr/bin/bro-pkg ]; then
+    if [ -e ~/.bro-pkg/config ]; then
         return
+    fi
+    if ! python -c 'import configparser' 2>/dev/null ; then
+        pip install configparser || barf
     fi
     pip install bro-pkg || barf
     bro-pkg autoconfig
