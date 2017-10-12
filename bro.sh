@@ -102,5 +102,8 @@ function bro::setup {
     if ! grep -q '@load tuning/json-logs.bro' /srv/bro/site/local.bro ; then
         echo @load tuning/json-logs.bro >> /srv/bro/site/local.bro
     fi
+    if ! grep -q 'Communication::listen_interface' /srv/bro/site/local.bro ; then
+        echo 'redef Communication::listen_interface = 127.0.0.1;' >> /srv/bro/site/local.bro
+    fi
 }
 
