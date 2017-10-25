@@ -29,3 +29,6 @@ if [ $(readlink /etc/localtime) != "/usr/share/zoneinfo/UTC" ] ; then
     echo "Setting timezone to UTC"
     ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 fi
+
+echo "Updating geoip databases"
+geoipupdate
