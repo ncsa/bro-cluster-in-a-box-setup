@@ -27,6 +27,7 @@ function pfring::setup() {
     if [ ! -e /etc/modprobe.d/pfring_options.conf ]; then
         cp ${ROOT}/dist/pfring_options.conf /etc/modprobe.d/
     fi
+    ldconfig
 }
 
 function pfring::setup_bro_plugin() {
