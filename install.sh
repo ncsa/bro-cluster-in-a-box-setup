@@ -14,6 +14,8 @@ bro::setup v2.5.1 /srv/bro
 
 source /etc/profile.d/bro.sh || barf
 
+install_package pciutils # for lspci used by pf_ring
+
 pfring::setup_bro_plugin
 
 install_package net-tools # for ifconfig
