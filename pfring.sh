@@ -12,12 +12,12 @@ function pfring::setup_userland() {
 
    epel::setup
    yum update || barf
-   yum -q -y install pfring || barf
+   yum -y install pfring || barf
 }
 
 function pfring::setup_kernel() {
    install_package kernel-devel
-   yum -q -y install pfring-dkms || barf
+   yum -y install pfring-dkms || barf
 }
 
 function pfring::setup() {

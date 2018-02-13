@@ -8,5 +8,5 @@ install_package() {
         return
     fi
     echo "Installing package $1"
-    yum -q -y install $1 || barf
+    yum -y install $1 || barf
 }
