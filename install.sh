@@ -10,7 +10,7 @@ source tuning.sh
 
 pfring::setup
 caf::setup 0.14.4
-bro::setup v2.5.3 /srv/bro
+bro::setup v2.5.4 /srv/bro
 
 source /etc/profile.d/bro.sh || barf
 
