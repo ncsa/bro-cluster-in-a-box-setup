@@ -23,7 +23,7 @@ install_package gdb # for crash reports
 install_package jq # for json logs
 
 bropkg::install_package ncsa/bro-interface-setup master
-bropkg::install_package ncsa/bro-doctor 1.17.1
+bropkg::install_package ncsa/bro-doctor 1.21.3
 
 tuning::setup
 
